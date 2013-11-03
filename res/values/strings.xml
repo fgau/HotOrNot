@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HotOrNot</string>
+    <string name="nickname"></string>
+    <string name="hotpix"></string>
+    <string name="no_button">No</string>
+    <string name="yes_button">Yes</string>
+    <string name="maybe_button">Maybe</string>
+</resources>
