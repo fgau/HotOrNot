@@ -21,7 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    private TextView textView;
+	private String HOTURL = "http://www.hotornot.de/index.php";
+	private TextView textView;
 
     /** Called when the activity is first created. */
     @Override
@@ -29,6 +30,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         textView = (TextView) findViewById(R.id.textView1);
+
+        DownloadWebPageTask task = new DownloadWebPageTask();
+        task.execute(new String[] { HOTURL });
     }
 
     public String cutBack(String txt, String teil, int number) {
@@ -131,6 +135,6 @@ public class MainActivity extends Activity {
 
     public void readWebpage(View view) {
     	DownloadWebPageTask task = new DownloadWebPageTask();
-    	task.execute(new String[] { "http://www.hotornot.de/index.php" });
+    	task.execute(new String[] { HOTURL });
     }
 }
