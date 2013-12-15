@@ -6,4 +6,5 @@
     <string name="no_button">No</string>
     <string name="yes_button">Yes</string>
     <string name="maybe_button">Maybe</string>
+    <string name="action_settings">About</string>
 </resources>

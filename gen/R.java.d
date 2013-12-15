@@ -19,6 +19,7 @@
 /home/fgau/projects/HotOrNot/res/drawable-mdpi/button_maybe.png \
 /home/fgau/projects/HotOrNot/res/drawable-mdpi/ic_launcher.png \
 /home/fgau/projects/HotOrNot/res/drawable-mdpi/button_yes.png \
+/home/fgau/projects/HotOrNot/res/menu/main_activity_actions.xml \
 /home/fgau/projects/HotOrNot/bin/res/drawable-hdpi/button_no.png \
 /home/fgau/projects/HotOrNot/bin/res/drawable-hdpi/button_maybe.png \
 /home/fgau/projects/HotOrNot/bin/res/drawable-hdpi/ic_launcher.png \
