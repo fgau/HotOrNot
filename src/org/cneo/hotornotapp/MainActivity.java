@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,17 +43,24 @@ public class MainActivity extends Activity implements onSubmitListener {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle presses on the action bar items
+		// Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	        case R.id.action_settings:
 	        	onClickMaybe();
-	        	
 	        	return true;
+	        case R.id.check_female:
+	       		HOTURL = "http://www.hotornot.de/index.php/?changegender=w";
+	       		item.setChecked(true);
+	       		return true;
+	        case R.id.check_male:
+	            HOTURL = "http://www.hotornot.de/index.php/?changegender=m";
+	            item.setChecked(true);
+	        	return true;
+	        
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	
 	
 	
     /** Called when the activity is first created. */

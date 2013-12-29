@@ -1,17 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <!-- Settings, should always be in the overflow -->
+    
+    <group android:checkableBehavior="all">
+        <item android:id="@+id/check_female"
+            android:titleCondensed="Female"
+            android:title="@string/female"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:checkable="true" />
+        
+        <item android:id="@+id/check_male"
+            android:titleCondensed="Male"
+            android:title="@string/male"
+            android:icon="@android:drawable/ic_menu_preferences" 
+            android:checkable="true" />
+    </group>
+    
     <item android:id="@+id/action_settings"
           android:title="@string/action_settings"
           android:showAsAction="never" />
-    
-<!--      <CheckBox android:id="@+id/checkbox_male"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/male" />
-    
-    <CheckBox android:id="@+id/checkbox_female"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/female" />
-    -->
+
 </menu>
