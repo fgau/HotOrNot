@@ -7,4 +7,7 @@
     <string name="yes_button">Yes</string>
     <string name="maybe_button">Maybe</string>
     <string name="action_settings">About</string>
+    <string name="about_txt">the idea based on the famous pyneo dbus-daemon called hond. the original source can be found here: https://git.pyneo.org</string>
+	<string name="male">Male</string>
+	<string name="female">Female</string>
 </resources>

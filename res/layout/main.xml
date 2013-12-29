@@ -26,19 +26,11 @@
         android:layout_weight="0.27" >
 
         <ImageButton
-            android:contentDescription="@string/maybe_button"
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.33"
-            android:src="@drawable/button_maybe" />
-
-        <ImageButton
             android:contentDescription="@string/no_button"
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.33"
+            android:layout_weight="0.5"
             android:src="@drawable/button_no"
             android:onClick="readWebpage" />
 
@@ -47,7 +39,7 @@
             android:id="@+id/imageButton1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.33"
+            android:layout_weight="0.5"
             android:src="@drawable/button_yes"
             android:onClick="readWebpage" />
 

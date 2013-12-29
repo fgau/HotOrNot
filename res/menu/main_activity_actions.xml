@@ -3,4 +3,15 @@
     <item android:id="@+id/action_settings"
           android:title="@string/action_settings"
           android:showAsAction="never" />
+    
+<!--      <CheckBox android:id="@+id/checkbox_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/male" />
+    
+    <CheckBox android:id="@+id/checkbox_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/female" />
+    -->
 </menu>

@@ -1,5 +1,7 @@
 package org.cneo.hotornotapp;
 
+import org.cneo.hotornotapp.AboutDialog.onSubmitListener;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,8 +12,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -19,14 +21,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements onSubmitListener {
 	private String HOTURL = "http://www.hotornot.de/index.php";
 	private TextView textView;
-
+	
+	final Context context = this;
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    // Inflate the menu items for use in the action bar
@@ -34,6 +39,21 @@ public class MainActivity extends Activity {
 	    inflater.inflate(R.menu.main_activity_actions, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	onClickMaybe();
+	        	
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	
 	
     /** Called when the activity is first created. */
     @Override
@@ -148,4 +168,16 @@ public class MainActivity extends Activity {
     	DownloadWebPageTask task = new DownloadWebPageTask();
     	task.execute(new String[] { HOTURL });
     }
+    
+    public void onClickMaybe() {  
+        AboutDialog fragment1 = new AboutDialog();   
+        fragment1.mListener = MainActivity.this;  
+        fragment1.show(getFragmentManager(), "");  
+       }
+
+	@Override
+	public void setOnSubmitListener(String arg) {
+		// TODO Auto-generated method stub
+		
+	}
 }
