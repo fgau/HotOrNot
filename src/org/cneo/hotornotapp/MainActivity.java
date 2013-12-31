@@ -26,6 +26,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements onSubmitListener {
 	private String HOTURL = "http://www.hotornot.de/index.php";
@@ -51,10 +52,16 @@ public class MainActivity extends Activity implements onSubmitListener {
 	        case R.id.check_female:
 	       		HOTURL = "http://www.hotornot.de/index.php/?changegender=w";
 	       		item.setChecked(true);
+	       		Toast.makeText(getApplicationContext(),
+	       				"Female Selected",
+	       				Toast.LENGTH_LONG).show();
 	       		return true;
 	        case R.id.check_male:
 	            HOTURL = "http://www.hotornot.de/index.php/?changegender=m";
 	            item.setChecked(true);
+	        	Toast.makeText(getApplicationContext(),
+	        			"Male Selected",
+	        			Toast.LENGTH_LONG).show();
 	        	return true;
 	        
 	        default:
