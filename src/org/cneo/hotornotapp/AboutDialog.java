@@ -19,22 +19,22 @@ public class AboutDialog extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		final Dialog dialog = new Dialog(getActivity());
-//		dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-//		dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
 		dialog.setContentView(R.layout.about_dialog);
 		dialog.setTitle("About HotOrNot");
-//		dialog.getWindow().setBackgroundDrawable(
-//				new ColorDrawable(Color.TRANSPARENT));
 		dialog.show();
+		
 		mButton = (Button) dialog.findViewById(R.id.button1);
 		mButton.setOnClickListener(new OnClickListener() {
 			
-			@Override
-			public void onClick(View v) {
-				dismiss();
-			}
+		@Override
+		public void onClick(View v) {
+			dismiss();
+		}
+	
 		});
-		return dialog;
+	
+	return dialog;
+	
 	}
 }  
