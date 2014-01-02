@@ -1,16 +1,25 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<group android:checkableBehavior="single">
-	    <item android:id="@+id/check_female"
-	        android:title="@string/female"
-	        android:checked="true"/>
-	    
-	    <item android:id="@+id/check_male"
-	        android:title="@string/male" />
-    </group>
+    <item android:id="@+id/action_menu"
+        android:title="@string/action_settings"
+        android:icon="@drawable/ic_action_overflow"
+        android:showAsAction="always" >
+    	
+    	<menu>
+    	     <group android:checkableBehavior="single">
+    	         <item android:id="@+id/check_female"
+    	             android:title="@string/female"
+    	             android:checked="true"/>
+    	         
+    	         <item android:id="@+id/check_male"
+    	             android:title="@string/male" />
+    	     </group>
+    	     
+    	     <item android:id="@+id/action_settings"
+    	          android:title="@string/action_settings"
+    	          android:showAsAction="never" />
+    	</menu>
+    	
+    </item>
     
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:showAsAction="never" />
-
 </menu>

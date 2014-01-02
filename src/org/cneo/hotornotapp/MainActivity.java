@@ -68,7 +68,6 @@ public class MainActivity extends Activity implements onSubmitListener {
 	    }
 	}
 	
-	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
