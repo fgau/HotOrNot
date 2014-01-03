@@ -3,14 +3,24 @@ package org.cneo.hotornotapp;
 import org.cneo.hotornotapp.AboutDialog.onSubmitListener;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements onSubmitListener {
+	private static String nickname;
 	private String HOTURL = "http://www.hotornot.de/index.php";
 	private TextView textView;
 	
@@ -93,6 +104,40 @@ public class MainActivity extends Activity implements onSubmitListener {
         return txt;
     } 
     
+    private class PostAsyncTask extends AsyncTask<String, Integer, Double>{
+    	@Override
+    	protected Double doInBackground(String... params) {
+    		// TODO Auto-generated method stub
+    		postData(params[0]);
+    		return null;
+    	}
+    	
+    	protected void onPostExecute(Double result){
+//    		pb.setVisibility(View.GONE);
+    		Toast.makeText(getApplicationContext(), "successfully logged", Toast.LENGTH_LONG).show();
+    	}
+    	
+    	@SuppressWarnings("unused")
+		public void postData(String valueIWantToSend) {
+    		HttpClient httpclient = new DefaultHttpClient();
+    		// specify the URL you want to post to
+    		HttpPost httppost = new HttpPost("http://webershandwick.de/receiver.php");
+    		try {
+    			// create a list to store HTTP variables and their values
+    			List<BasicNameValuePair> nameValuePairs = new ArrayList<BasicNameValuePair>();
+    			// add an HTTP variable and value pair
+    			nameValuePairs.add(new BasicNameValuePair("myHttpData", valueIWantToSend));
+    			httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+    			// send the variable and value, in other words post, to the URL
+    			HttpResponse response = httpclient.execute(httppost);
+    		} catch (ClientProtocolException e) {
+    			// process exception
+    		} catch (IOException e) {
+    			// process exception
+    		}
+    	}
+    }
+    
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     	ImageView bmImage;
 
@@ -145,8 +190,8 @@ public class MainActivity extends Activity implements onSubmitListener {
 
         @Override
         protected void onPostExecute(String result) {
-        	String nickname = "";
         	String pix_url = "";
+        	nickname = "";
         	
             Pattern p = Pattern.compile("(<title.*?>)(.+?)(</title>)");
             Matcher m = p.matcher(result);
@@ -180,6 +225,10 @@ public class MainActivity extends Activity implements onSubmitListener {
     public void readWebpage(View view) {
     	DownloadWebPageTask task = new DownloadWebPageTask();
     	task.execute(new String[] { HOTURL });
+    	
+    	Timestamp timestamp = new Timestamp(new Date().getTime());
+    	
+    	new PostAsyncTask().execute(timestamp.toString() + "," + nickname + "\n");
     }
     
     public void onClickMaybe() {  
@@ -192,5 +241,6 @@ public class MainActivity extends Activity implements onSubmitListener {
 	public void setOnSubmitListener(String arg) {
 		// TODO Auto-generated method stub
 		
-	}
+	} 
+	
 }
