@@ -234,8 +234,8 @@ public class MainActivity extends Activity implements onSubmitListener {
     public void onClickMaybe() {  
         AboutDialog fragment1 = new AboutDialog();   
         fragment1.mListener = MainActivity.this;  
-        fragment1.show(getFragmentManager(), "");  
-       }
+        fragment1.show(getFragmentManager(), "");
+    }
 
 	@Override
 	public void setOnSubmitListener(String arg) {
