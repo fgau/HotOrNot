@@ -32,6 +32,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:src="@drawable/button_no"
+            android:background="?android:selectableItemBackground"
             android:onClick="readWebpage" />
 
         <ImageButton
@@ -41,6 +42,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:src="@drawable/button_yes"
+            android:background="?android:selectableItemBackground"
             android:onClick="readWebpage" />
 
     </LinearLayout>
