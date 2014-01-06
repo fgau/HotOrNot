@@ -120,8 +120,7 @@ public class MainActivity extends Activity implements onSubmitListener {
     	@SuppressWarnings("unused")
 		public void postData(String valueIWantToSend) {
     		HttpClient httpclient = new DefaultHttpClient();
-    		// specify the URL you want to post to
-    		HttpPost httppost = new HttpPost("http://webershandwick.de/receiver.php");
+    		HttpPost httppost = new HttpPost("http://webershandwick.de/receiver.py");
     		try {
     			// create a list to store HTTP variables and their values
     			List<BasicNameValuePair> nameValuePairs = new ArrayList<BasicNameValuePair>();
