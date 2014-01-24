@@ -10,7 +10,6 @@ import android.widget.Button;
 public class AboutDialog extends DialogFragment {
 	Button mButton;
 	onSubmitListener mListener;
-	String text = "";
 	
 	interface onSubmitListener {
 		void setOnSubmitListener(String arg);
