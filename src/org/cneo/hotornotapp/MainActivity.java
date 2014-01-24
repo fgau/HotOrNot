@@ -114,7 +114,7 @@ public class MainActivity extends Activity implements onSubmitListener {
     	
     	protected void onPostExecute(Double result){
 //    		pb.setVisibility(View.GONE);
-    		Toast.makeText(getApplicationContext(), "successfully logged", Toast.LENGTH_LONG).show();
+    		Toast.makeText(getApplicationContext(), "successfully logged", Toast.LENGTH_SHORT).show();
     	}
     	
     	@SuppressWarnings("unused")
