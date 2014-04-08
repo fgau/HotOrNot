@@ -23,6 +23,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -139,6 +140,11 @@ public class MainActivity extends Activity implements onSubmitListener {
     
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     	ImageView bmImage;
+    	ProgressDialog progressDialog;
+    	
+    	protected void onPreExecute() {
+            progressDialog= ProgressDialog.show(MainActivity.this, "","Download ...", true);                
+        };
 
         public DownloadImageTask(ImageView bmImage) {
             this.bmImage = bmImage;
@@ -159,6 +165,7 @@ public class MainActivity extends Activity implements onSubmitListener {
 
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
+            progressDialog.dismiss();
         }
     }
     
