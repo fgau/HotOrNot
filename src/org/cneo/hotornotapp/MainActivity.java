@@ -39,7 +39,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements onSubmitListener {
-	private static String nickname;
+	private String nickname;
 	private String HOTURL = "http://www.hotornot.de/index.php";
 	private TextView textView;
 	
@@ -140,11 +140,6 @@ public class MainActivity extends Activity implements onSubmitListener {
     
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     	ImageView bmImage;
-    	ProgressDialog progressDialog;
-    	
-    	protected void onPreExecute() {
-            progressDialog= ProgressDialog.show(MainActivity.this, "","Download ...", true);                
-        };
 
         public DownloadImageTask(ImageView bmImage) {
             this.bmImage = bmImage;
@@ -165,12 +160,17 @@ public class MainActivity extends Activity implements onSubmitListener {
 
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
-            progressDialog.dismiss();
         }
     }
     
     private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
-        @Override
+    	ProgressDialog progressDialog;
+    	
+    	protected void onPreExecute() {
+            progressDialog = ProgressDialog.show(MainActivity.this, "","Download ...", true);                
+    	}
+    	
+    	@Override
         protected String doInBackground(String... urls) {
             String response = "";
             for (String url : urls) {
@@ -224,7 +224,8 @@ public class MainActivity extends Activity implements onSubmitListener {
             	
             	new DownloadImageTask((ImageView) findViewById(R.id.imageView1))
             	.execute(pix_url);
-            }            
+            }
+            progressDialog.dismiss();
         }
     }
 
@@ -246,7 +247,6 @@ public class MainActivity extends Activity implements onSubmitListener {
 	@Override
 	public void setOnSubmitListener(String arg) {
 		// TODO Auto-generated method stub
-		
 	} 
 	
 }
