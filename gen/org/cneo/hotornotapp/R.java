@@ -15,11 +15,16 @@ public final class R {
         public static final int button_no=0x7f020001;
         public static final int button_not=0x7f020002;
         public static final int button_yes=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
+        public static final int hon_launcher_icon=0x7f020004;
+        public static final int ic_action_overflow=0x7f020005;
+        public static final int ic_action_search=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f060006;
+        public static final int action_menu=0x7f060006;
+        public static final int action_settings=0x7f060009;
         public static final int button1=0x7f060001;
+        public static final int check_female=0x7f060007;
+        public static final int check_male=0x7f060008;
         public static final int imageButton1=0x7f060005;
         public static final int imageButton2=0x7f060004;
         public static final int imageView1=0x7f060003;
