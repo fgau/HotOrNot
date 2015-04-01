@@ -1,5 +1,5 @@
 # HotOrNot
-<img src="https://gitorious.org/hotornot/hotornot/source/76bae61c3c419d9163e55e10ff946e6162e4a741:res/drawable-xhdpi/hon_launcher_icon.png">
+![Icon](https://raw.githubusercontent.com/fgau/HotOrNot/master/res/drawable-xhdpi/hon_launcher_icon.png)
 
 Funny Android application and a example to explore the android world.
 
