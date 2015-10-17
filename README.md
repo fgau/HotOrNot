@@ -4,3 +4,11 @@
 Funny Android application and a example to explore the android world.
 
 ## Overview
+
+This App is to use the service HotOrNot in a much simpler and clearer fashion.
+
+## License
+
+While the App itself is under Apache License Version 2.0, the artwork used is
+under Creative Commons, it is derived from pyneo-zadthemes.
+
